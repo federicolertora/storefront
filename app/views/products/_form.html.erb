@@ -10,7 +10,7 @@
     <%= f.association :category %>
     
     <% if @product.avatar.exists? %>
-    <%+ image_tag @product.avatar.url(:medium) %>
+    <% image_tag @product.avatar.url(:medium) %>
     <% end%>
     
     <%= f.input :avatar, as: :file %>
