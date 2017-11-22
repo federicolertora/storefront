@@ -6,6 +6,11 @@ class Product < ApplicationRecord
 
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
   
+  validates :name, length: {minimum: 3}
+  validates_presence_of :name, :price, :quantity, :brand, :category
+  validates_numericality_of :price, greater_than_or_equal_to: 0.01
+  validates_numericality_of :quantity, greater_than_or_equal_to: 0
+  
 end
 
 # == Schema Information
