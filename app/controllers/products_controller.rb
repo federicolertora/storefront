@@ -74,7 +74,7 @@ class ProductsController < ApplicationController
       params.require(:product).permit(:name, :price, :quantity, :description, :brand_id, :category_id, :avatar)
     end
     
-    def authenticat_admin!
+    def authenticate_admin!
       unless current_user.try(:admin?)
         raise SecurityError
       end

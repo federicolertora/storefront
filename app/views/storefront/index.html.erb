@@ -3,6 +3,16 @@
 <p>come get all your stuff here</p>
 
 <div class="row">
+    <% if params[:category_id] %>
+        <h3>All <%= @category.name %></h3>
+    <% else %>
+        <h3>All Products</h3>
+    <% end %>
+    
+    <% if @products.empty? %>
+        <h2>There are no products in <%= @category.name</h2>
+    <% end %>
+    
     <% @products.each do |product| %>
     <div class="col-sm-4">
         <div class="panel panel-default"></div>
